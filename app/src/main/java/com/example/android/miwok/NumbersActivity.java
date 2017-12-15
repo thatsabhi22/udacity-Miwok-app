@@ -2,7 +2,10 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,9 +16,6 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
-
-        // Find the root view so we can add child views to it
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
         //Initialize an Arraylist
         ArrayList<String> words = new ArrayList<String>();
@@ -32,19 +32,12 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        //for loop making the same task adding view to the rootview
-        for(int count = 0;count<words.size();count++){
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-            // Create a new TextView
-            TextView wordView = new TextView(this);
+        //ListView listView = (ListView) findViewById(R.id.list);
+        GridView gridView = (GridView) findViewById(R.id.gridview);
 
-             // Set the text to be word at the current index
-             wordView.setText(words.get(count));
-
-            // Add this TextView as another child to the root view of this layout
-            rootView.addView(wordView);
-
-        }
+        gridView.setAdapter(itemsAdapter);
 
     }
 }
