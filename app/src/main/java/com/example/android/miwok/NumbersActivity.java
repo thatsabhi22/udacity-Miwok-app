@@ -17,9 +17,6 @@ public class NumbersActivity extends AppCompatActivity {
         // Find the root view so we can add child views to it
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        // Create a variable to keep track of the current index position
-        int count=0;
-
         //Initialize an Arraylist
         ArrayList<String> words = new ArrayList<String>();
 
@@ -35,8 +32,9 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
+        //for loop making the same task adding view to the rootview
+        for(int count = 0;count<words.size();count++){
 
-        while(count < words.size()){
             // Create a new TextView
             TextView wordView = new TextView(this);
 
@@ -46,8 +44,6 @@ public class NumbersActivity extends AppCompatActivity {
             // Add this TextView as another child to the root view of this layout
             rootView.addView(wordView);
 
-            // Increment the index variable by 1
-            count++;
         }
 
     }
