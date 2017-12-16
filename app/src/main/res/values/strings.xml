@@ -32,5 +32,7 @@
     <string name="phrasesActivityLabel">Phrases</string>
     <string name="familyActivityLabel">Family</string>
     <string name="colorsActivityLabel">Colors</string>
+    <string name="miwok_word"><![CDATA[<miwok_word>]]></string>
+    <string name="english_word"><![CDATA[<english_word>]]></string>
 
 </resources>
