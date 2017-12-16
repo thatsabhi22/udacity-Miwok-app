@@ -35,6 +35,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     }
 
+    /**
+     * Provides a view for an AdapterView (ListView, GridView, etc.)
+     *
+     * @param position The position in the list of data that should be displayed in the
+     *                 list item view.
+     * @param convertView The recycled view to populate.
+     * @param parent The parent ViewGroup that is used for inflation.
+     * @return The View for the position in the AdapterView.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -64,6 +73,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the name TextView
         miwokTranslation.setText(currentWord.getmMiwokTranslation());
 
+
+        //Return the whole list item layout
         return listItemView;
     }
 }
