@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/default_list_view_padding"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/list_image"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/miwok_word"
+        android:layout_toEndOf="@id/list_image"
+        android:layout_toRightOf="@+id/list_image"
+        android:layout_marginLeft="@dimen/list_text_view_left_margin"
+        android:layout_marginStart="@dimen/list_text_view_left_margin"
         android:id="@+id/miwok_word"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/english_word"
+        android:layout_marginLeft="@dimen/list_text_view_left_margin"
+        android:layout_marginStart="@dimen/list_text_view_left_margin"
+        android:layout_below="@+id/miwok_word"
+        android:layout_toEndOf="@id/list_image"
+        android:layout_toRightOf="@+id/list_image"
         android:id="@+id/english_word"/>
 
-</LinearLayout>
+</RelativeLayout>
