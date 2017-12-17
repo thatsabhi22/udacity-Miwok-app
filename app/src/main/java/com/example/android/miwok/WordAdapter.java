@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,7 +33,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, wordList);
-
     }
 
     /**
@@ -59,20 +59,30 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the {@link Word} object located at this position in the list
         Word currentWord = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView defaultTranslation = listItemView.findViewById(R.id.english_word);
+        // Find the TextView in the list_item.xml layout with the ID english_word
+        TextView defaultTranslation = (TextView)listItemView.findViewById(R.id.english_word);
 
         // Get the default translation from current Word object and
         // set this text on the name TextView
         defaultTranslation.setText(currentWord.getmDefaultTranslation());
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView miwokTranslation = listItemView.findViewById(R.id.miwok_word);
+        // Find the TextView in the list_item.xml layout with the ID miwok_word
+        TextView miwokTranslation = (TextView)listItemView.findViewById(R.id.miwok_word);
 
         // Get the miwok translation from the current Word object and
         // set this text on the name TextView
         miwokTranslation.setText(currentWord.getmMiwokTranslation());
 
+        // Find the ImageView in the list_item.xml layout with the ID list_image
+        ImageView wordImage = (ImageView)listItemView.findViewById(R.id.list_image);
+
+        // Get the image resource id from the current Word object and
+        // set this resourceId on the name ImageView
+
+        if(currentWord.getImageResourceId() == 0)
+            wordImage.setVisibility(View.GONE);
+        else
+            wordImage.setImageResource(currentWord.getImageResourceId());
 
         //Return the whole list item layout
         return listItemView;
