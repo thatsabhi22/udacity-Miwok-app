@@ -22,7 +22,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FamilyFragment extends Fragment{
+public class FamilyFragment extends Fragment {
 
     /**
      * Declaring global variable for MediaPlayer Class

@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,5 +21,10 @@ public class MainActivity extends AppCompatActivity {
         MiwokFragmentPagerAdapter miwokFragmentPagerAdapter = new MiwokFragmentPagerAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(miwokFragmentPagerAdapter);
+
+
+        // Give the TabLayout the ViewPager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
