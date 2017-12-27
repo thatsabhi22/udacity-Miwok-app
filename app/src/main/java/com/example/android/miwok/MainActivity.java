@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        MiwokFragmentPagerAdapter miwokFragmentPagerAdapter = new MiwokFragmentPagerAdapter(getSupportFragmentManager());
+        MiwokFragmentPagerAdapter miwokFragmentPagerAdapter
+                = new MiwokFragmentPagerAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(miwokFragmentPagerAdapter);
 

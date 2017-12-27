@@ -40,5 +40,4 @@ public class MiwokFragmentPagerAdapter extends FragmentPagerAdapter {
         // Generate title based on item position
         return tabTitles[position];
     }
-
 }
